@@ -17,7 +17,7 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-xl border-b border-[#d7dbf4] shadow-sm">
+    <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-xl border-b border-purple-100 shadow-lg">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Logo — Golden Pollen + Indigo Bloom */}
@@ -34,10 +34,10 @@ export default function Navbar() {
               <Link
                 key={item.path}
                 to={item.path}
-                className="text-[#374dc8] font-medium hover:text-[#cd3278] px-3 py-2 rounded-lg transition-all duration-300 relative group"
-              >
+                className="relative text-[#374dc8] font-medium hover:text-[#cd3278] px-3 py-2 rounded-lg transition-all duration-300 group"
+>
                 {item.name}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[#f5c20a] to-[#e505fa] group-hover:w-full transition-all"></span>
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[#f5c20a] to-[#e505fa] group-hover:w-full transition-all duration-300"></span>
               </Link>
             ))}
           </nav>
