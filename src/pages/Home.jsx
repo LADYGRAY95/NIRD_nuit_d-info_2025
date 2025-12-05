@@ -8,6 +8,7 @@ import PilotsSection from '../components/sections/PilotsSection';
 import RefurbishSection from '../components/sections/RefurbishSection';
 import CommunitiesSection from '../components/sections/CommunitiesSection';
 import img from '../assets/logo2.png';
+import SnakeGame from '../components/ui/SnakeGame';
 
 export default function Home() {
   const [isVisible, setIsVisible] = useState(false);
@@ -17,7 +18,21 @@ export default function Home() {
     const timer = setTimeout(() => setIsVisible(true), 100);
     return () => clearTimeout(timer);
   }, []);
+  const [clicks, setClicks] = useState(0);
+  const [showSnake, setShowSnake] = useState(false);
 
+  function handleLogoClick() {
+    setClicks(prev => {
+      const newCount = prev + 1;
+
+      if (newCount >= 3) {
+        setShowSnake(true);
+        return 0; // Reset clicks after opening game
+      }
+
+      return newCount;
+    });
+  }
   return (
     <div>
       {/* Hero — Golden Pollen to Sweet Peony Gradient */}
@@ -47,8 +62,13 @@ export default function Home() {
                     src={img} 
                     alt="Logo NIRD"
                     className="w-full h-auto rounded-2xl shadow-lg"
+                    onClick={handleLogoClick}
                   />
-                  
+                  {clicks > 0 && (
+                <div className="absolute top-2 right-2 bg-white/90 text-purple-900 rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm shadow-lg">
+                  {clicks}
+                </div>
+              )}
                   {/* Floating particles */}
                   <div className="absolute -top-6 -right-6 w-12 h-12 bg-[#f5c20a] rounded-full opacity-80 animate-bounce"></div>
                   <div className="absolute -bottom-4 -left-4 w-8 h-8 bg-white rounded-full opacity-60 animate-bounce animation-delay-700"></div>
@@ -177,6 +197,9 @@ export default function Home() {
       <PilotsSection />
       <RefurbishSection />
       <CommunitiesSection />
+
+      {/* Hidden Snake Game */}
+      {showSnake && <SnakeGame onClose={() => setShowSnake(false)} />}
     </div>
   );
 }
