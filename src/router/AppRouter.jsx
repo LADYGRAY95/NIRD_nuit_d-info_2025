@@ -9,6 +9,7 @@ import Demarche from '../pages/Demarche';
 import Linux from '../pages/Linux';
 import About from '../pages/About';
 import FrustratingInput from '../pages/FrustratingInput';
+import SportPosture from '../pages/SportPosture';
 
 export default function AppRouter() {
   return (
@@ -21,6 +22,7 @@ export default function AppRouter() {
         <Route path="/demarche" element={<Demarche />} />
         <Route path="/linux" element={<Linux />} />
         <Route path="/a-propos" element={<About />} />
+        <Route path="/sport-posture" element={<SportPosture />} />
         <Route path="/frustrating-input" element={<FrustratingInput />} />
         <Route>404 Not Found</Route>
         </Route>
