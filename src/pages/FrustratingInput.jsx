@@ -234,9 +234,9 @@ const FrustratingInput = () => {
   if (isComplete) {
     return (
       <div className="fixed inset-0 bg-gradient-to-br from-emerald-900 via-emerald-800 to-emerald-700 flex items-center justify-center p-4 z-50">
-        <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-12 max-w-md w-full border border-emerald-500/30 text-center">
+        <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-6 md:p-8 w-full max-w-md border border-emerald-500/30 text-center">
           <svg 
-            className="w-24 h-24 mx-auto mb-6 text-emerald-400" 
+            className="w-16 h-16 md:w-24 md:h-24 mx-auto mb-4 md:mb-6 text-emerald-400" 
             viewBox="0 0 24 24" 
             fill="none" 
             stroke="currentColor" 
@@ -245,23 +245,22 @@ const FrustratingInput = () => {
             <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
             <polyline points="22 4 12 14.01 9 11.01" />
           </svg>
-          <h1 className="text-3xl font-bold text-white mb-4">Félicitations ! 🎉</h1>
-          <p className="text-emerald-100 mb-6">
+          <h1 className="text-2xl md:text-3xl font-bold text-white mb-3 md:mb-4">Félicitations ! 🎉</h1>
+          <p className="text-emerald-100 mb-4 md:mb-6">
             Vous avez réussi à entrer votre date d'anniversaire !
           </p>
-          <div className="bg-black/30 rounded-xl p-6 mb-6">
-            <p className="text-2xl font-mono text-white">
+          <div className="bg-black/30 rounded-xl p-4 md:p-6 mb-4 md:mb-6">
+            <p className="text-lg md:text-2xl font-mono text-white">
               {capturedValues.day1}{capturedValues.day2}/
               {capturedValues.month1}{capturedValues.month2}/
               {capturedValues.year1}{capturedValues.year2}{capturedValues.year3}{capturedValues.year4}
             </p>
           </div>
-          <p className="text-emerald-200 mb-4">
+          <p className="text-emerald-200">
             Tentatives de capture : <span className="font-bold">{attempts}</span>
           </p>
-          <p className="text-emerald-300 text-sm italic mt-4">
-            &quot;Si une machine doit être notre servante, elle doit être conçue pour être facile à utiliser.&quot;
-            <br />- Donald Norman (on a fait exactement l'inverse)
+          <p className="text-emerald-300 text-xs md:text-sm italic mt-3 md:mt-4">
+            &quot;Si une machine doit être notre servante…&quot; — Donald Norman
           </p>
         </div>
       </div>
@@ -274,10 +273,10 @@ const FrustratingInput = () => {
     const year = parseInt(`${capturedValues.year1}${capturedValues.year2}${capturedValues.year3}${capturedValues.year4}`) || 0;
 
     return (
-      <div className="fixed inset-0 bg-gradient-to-br from-purple-900 via-indigo-900 to-blue-900 flex items-center justify-center p-4 z-50">
-        <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 max-w-md w-full border border-purple-500/30">
+      <div className="fixed inset-0 bg-gradient-to-br from-purple-900 via-indigo-900 to-blue-900 flex items-center justify-center p-3 md:p-4 z-50">
+        <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-5 md:p-8 w-full max-w-md border border-purple-500/30">
           <svg 
-            className="w-16 h-16 mx-auto mb-6 text-amber-400" 
+            className="w-12 h-12 md:w-16 md:h-16 mx-auto mb-4 md:mb-6 text-amber-400" 
             viewBox="0 0 24 24" 
             fill="none" 
             stroke="currentColor" 
@@ -287,81 +286,78 @@ const FrustratingInput = () => {
             <line x1="12" y1="8" x2="12" y2="12" />
             <line x1="12" y1="16" x2="12.01" y2="16" />
           </svg>
-          <h2 className="text-2xl font-bold text-white text-center mb-6">Validation Finale</h2>
+          <h2 className="text-xl md:text-2xl font-bold text-white text-center mb-4 md:mb-6">Validation Finale</h2>
           
-          <div className="bg-black/30 rounded-xl p-6 mb-6 text-center">
-            <p className="text-purple-200 mb-2">Date capturée :</p>
-            <p className="text-xl font-mono text-white">
+          <div className="bg-black/30 rounded-xl p-4 md:p-6 mb-4 md:mb-6 text-center">
+            <p className="text-purple-200 text-sm md:text-base mb-1 md:mb-2">Date capturée :</p>
+            <p className="text-base md:text-xl font-mono text-white">
               {capturedValues.day1}{capturedValues.day2}/
               {capturedValues.month1}{capturedValues.month2}/
               {capturedValues.year1}{capturedValues.year2}{capturedValues.year3}{capturedValues.year4}
             </p>
           </div>
 
-          <div className="bg-purple-900/50 rounded-xl p-6 mb-6">
-            <p className="text-purple-200 mb-2">Vérifiez votre date d'anniversaire :</p>
-            <p className="text-lg font-mono text-white mb-1">
+          <div className="bg-purple-900/50 rounded-xl p-4 md:p-6 mb-4 md:mb-6">
+            <p className="text-purple-200 text-sm md:text-base mb-1 md:mb-2">Vérifiez votre date :</p>
+            <p className="text-base md:text-lg font-mono text-white">
               Jour : {day} | Mois : {month} | Année : {year}
             </p>
-            <p className="text-purple-300 text-sm">Cette date est-elle correcte ?</p>
           </div>
 
           <button
             onClick={validateAnswer}
-            className="w-full bg-gradient-to-r from-purple-600 to-blue-500 hover:from-purple-700 hover:to-blue-600 text-white font-bold py-3 px-6 rounded-xl transition-all duration-300 transform hover:scale-105"
+            className="w-full bg-gradient-to-r from-purple-600 to-blue-500 hover:from-purple-700 hover:to-blue-600 text-white font-bold py-2.5 md:py-3 px-4 md:px-6 rounded-xl transition-transform hover:scale-[1.02] text-sm md:text-base"
           >
             Confirmer la date
           </button>
-          
-          <p className="text-purple-300 text-xs text-center mt-4">
-            ⚠️ La date sera validée automatiquement (Jour: 1–31, Mois: 1–12, Année: 1900–2025)
-          </p>
         </div>
       </div>
     );
   }
 
-  // 🔑 ONLY CHANGE HERE: added `style={{ transform: 'translateX(-5%)' }}`
+  // 🔑 KEY: 9% left shift + responsive, full-screen container
   return (
     <div 
       ref={containerRef}
       onMouseMove={handleMouseMove}
       className="relative w-screen h-screen overflow-hidden cursor-crosshair bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900"
-      style={{ transform: 'translateX(-9%)' }}  // ← shifts everything 5% left
+      style={{ transform: 'translateX(-9%)' }}
     >
-      <div className="absolute top-0 left-0 right-0 bg-black/30 backdrop-blur-lg p-6 border-b border-purple-500/30 z-30">
+      {/* Header */}
+      <div className="absolute top-0 left-0 right-0 bg-black/30 backdrop-blur-sm p-4 md:p-6 border-b border-purple-500/30 z-30">
         <div className="max-w-7xl mx-auto">
-          <div className="flex justify-between items-center mb-4">
-            <div className="flex items-center gap-3">
-              <svg className="w-8 h-8 text-purple-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <div className="flex flex-wrap justify-between items-center gap-3 mb-2 md:mb-4">
+            <div className="flex items-center gap-2 md:gap-3">
+              <svg className="w-6 h-6 md:w-8 md:h-8 text-purple-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
                 <line x1="16" y1="2" x2="16" y2="6" />
                 <line x1="8" y1="2" x2="8" y2="6" />
                 <line x1="3" y1="10" x2="21" y2="10" />
               </svg>
-              <h1 className="text-2xl font-bold text-white">The Quantum Birthday Input</h1>
+              <h1 className="text-lg md:text-2xl font-bold text-white">The Quantum Birthday Input</h1>
             </div>
-            <div className="flex items-center gap-2">
-              <svg className="w-8 h-8 text-amber-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <div className="flex items-center gap-1.5 md:gap-2">
+              <svg className="w-6 h-6 md:w-8 md:h-8 text-amber-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
               </svg>
-              <span className="text-amber-400 font-mono">{attempts} tentatives</span>
+              <span className="text-amber-400 font-mono text-xs md:text-base">{attempts} tentatives</span>
             </div>
           </div>
-          <p className="text-purple-300">
+          <p className="text-purple-300 text-xs md:text-base">
             🎯 Entrer votre date d'anniversaire en attrapant les chiffres flottants
           </p>
         </div>
       </div>
 
-      <div className="absolute top-32 left-8 bg-black/50 backdrop-blur-lg rounded-xl p-6 max-w-xs border border-purple-500/30 z-30">
-        <h3 className="text-white font-bold mb-3 flex items-center gap-2">
-          <svg className="w-5 h-5 text-purple-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+      {/* Instructions Panel — responsive positioning */}
+      <div className="absolute top-20 md:top-32 left-4 md:left-8 bg-black/50 backdrop-blur-lg rounded-xl p-4 md:p-6 max-w-xs md:max-w-sm border border-purple-500/30 z-30">
+        <h3 className="text-white font-bold text-sm md:text-base mb-2 md:mb-3 flex items-center gap-1.5 md:gap-2">
+          <svg className="w-4 h-4 md:w-5 md:h-5 text-purple-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
             <path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M18.4 5.6L5.6 18.4" />
           </svg>
           Instructions
         </h3>
-        <ul className="text-purple-200 text-sm space-y-1.5">
+        <ul className="text-purple-200 text-xs md:text-sm space-y-1">
           <li>• Les chiffres fuient votre curseur</li>
           <li>• Cliquez sur un chiffre dans la zone centrale</li>
           <li>• Ordre de remplissage : <span className="text-amber-400">ALÉATOIRE</span></li>
@@ -370,10 +366,11 @@ const FrustratingInput = () => {
         </ul>
       </div>
 
-      <div className="absolute top-32 right-8 bg-black/50 backdrop-blur-lg rounded-xl p-6 border border-purple-500/30 z-30">
-        <div className="flex items-center gap-3">
+      {/* Date Display — responsive positioning */}
+      <div className="absolute top-20 md:top-32 right-4 md:right-8 bg-black/50 backdrop-blur-lg rounded-xl p-4 md:p-6 border border-purple-500/30 z-30">
+        <div className="flex items-center gap-2 flex-wrap justify-center">
           {['day1', 'day2'].map(key => (
-            <div key={key} className={`w-12 h-16 rounded-lg flex items-center justify-center text-xl font-mono border-2 ${
+            <div key={key} className={`w-8 h-12 md:w-10 md:h-14 lg:w-12 lg:h-16 rounded-md flex items-center justify-center text-base md:text-lg lg:text-xl font-mono border ${
               currentTarget === key
                 ? 'bg-amber-500/30 border-amber-400 text-white animate-[pulse_1s_infinite]'
                 : capturedValues[key] !== null
@@ -383,9 +380,9 @@ const FrustratingInput = () => {
               {capturedValues[key] ?? '_'}
             </div>
           ))}
-          <span className="text-white text-xl">/</span>
+          <span className="text-white text-base md:text-lg lg:text-xl">/</span>
           {['month1', 'month2'].map(key => (
-            <div key={key} className={`w-12 h-16 rounded-lg flex items-center justify-center text-xl font-mono border-2 ${
+            <div key={key} className={`w-8 h-12 md:w-10 md:h-14 lg:w-12 lg:h-16 rounded-md flex items-center justify-center text-base md:text-lg lg:text-xl font-mono border ${
               currentTarget === key
                 ? 'bg-amber-500/30 border-amber-400 text-white animate-[pulse_1s_infinite]'
                 : capturedValues[key] !== null
@@ -395,9 +392,9 @@ const FrustratingInput = () => {
               {capturedValues[key] ?? '_'}
             </div>
           ))}
-          <span className="text-white text-xl">/</span>
+          <span className="text-white text-base md:text-lg lg:text-xl">/</span>
           {['year1', 'year2', 'year3', 'year4'].map(key => (
-            <div key={key} className={`w-12 h-16 rounded-lg flex items-center justify-center text-xl font-mono border-2 ${
+            <div key={key} className={`w-8 h-12 md:w-10 md:h-14 lg:w-12 lg:h-16 rounded-md flex items-center justify-center text-base md:text-lg lg:text-xl font-mono border ${
               currentTarget === key
                 ? 'bg-amber-500/30 border-amber-400 text-white animate-[pulse_1s_infinite]'
                 : capturedValues[key] !== null
@@ -408,16 +405,18 @@ const FrustratingInput = () => {
             </div>
           ))}
         </div>
-        <p className="text-center text-purple-300 text-xs mt-3">JJ/MM/AAAA</p>
+        <p className="text-center text-purple-400 text-xs mt-2">JJ/MM/AAAA</p>
       </div>
 
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-48 h-48 rounded-full border-4 border-dashed border-amber-500/50 flex items-center justify-center animate-[spin_10s_linear_infinite]">
+      {/* Capture Zone */}
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-36 h-36 md:w-40 md:h-40 lg:w-48 lg:h-48 rounded-full border-3 md:border-4 border-dashed border-amber-500/50 flex items-center justify-center animate-[spin_10s_linear_infinite]">
         <div className="text-center">
-          <p className="text-amber-400 font-bold text-lg">ZONE DE</p>
-          <p className="text-amber-400 font-bold text-lg">CAPTURE</p>
+          <p className="text-amber-400 font-bold text-xs md:text-sm lg:text-lg">ZONE DE</p>
+          <p className="text-amber-400 font-bold text-xs md:text-sm lg:text-lg">CAPTURE</p>
         </div>
       </div>
 
+      {/* Floating Digits */}
       {floatingDigits.map(digit => (
         <div
           key={digit.id}
@@ -431,15 +430,15 @@ const FrustratingInput = () => {
           }}
           className="cursor-pointer select-none"
         >
-          <div className="relative w-16 h-16">
+          <div className="relative w-10 h-10 md:w-12 md:h-12 lg:w-16 lg:h-16">
             <div 
-              className="absolute inset-0 bg-purple-500 rounded-full opacity-50 blur-xl"
-              style={{ opacity: 0.5 }}
+              className="absolute inset-0 bg-purple-500 rounded-full opacity-40 blur-md md:blur-lg"
+              style={{ opacity: 0.4 }}
             />
             <div 
-              className="relative flex items-center justify-center w-16 h-16 bg-gradient-to-br from-purple-600 to-blue-500 rounded-full text-white text-2xl font-bold border-4 border-purple-400 shadow-2xl hover:scale-110 transition-transform duration-200"
-              onMouseEnter={e => e.currentTarget.previousElementSibling.style.opacity = '0.75'}
-              onMouseLeave={e => e.currentTarget.previousElementSibling.style.opacity = '0.5'}
+              className="relative flex items-center justify-center w-full h-full bg-gradient-to-br from-purple-600 to-blue-500 rounded-full text-white text-base md:text-lg lg:text-2xl font-bold border-2 md:border-4 border-purple-400 shadow-lg hover:scale-110 transition-transform duration-200"
+              onMouseEnter={e => e.currentTarget.previousElementSibling.style.opacity = '0.65'}
+              onMouseLeave={e => e.currentTarget.previousElementSibling.style.opacity = '0.4'}
             >
               {digit.value}
             </div>
@@ -447,11 +446,12 @@ const FrustratingInput = () => {
         </div>
       ))}
 
-      <div className="absolute bottom-0 left-0 right-0 bg-black/30 backdrop-blur-lg p-4 text-center border-t border-purple-500/30">
-        <p className="text-purple-300 text-sm italic">
+      {/* Footer */}
+      <div className="absolute bottom-0 left-0 right-0 bg-black/30 backdrop-blur-sm p-3 md:p-4 text-center border-t border-purple-500/30">
+        <p className="text-purple-400 text-[10px] md:text-xs italic">
           &quot;Si une machine doit être notre servante, elle doit être conçue pour être facile à utiliser.&quot; - Donald Norman
         </p>
-        <p className="text-purple-400 text-xs mt-1">
+        <p className="text-purple-500 text-[8px] md:text-[10px] mt-0.5">
           (Nous avons fait exactement l'inverse)
         </p>
       </div>
