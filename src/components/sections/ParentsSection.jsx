@@ -94,11 +94,6 @@ export default function ModernParentsSection() {
                     ))}
                   </div>
 
-                  {/* CTA button */}
-                  <button className={`w-full py-3 px-4 rounded-xl bg-gradient-to-r ${item.color} text-white font-semibold shadow-md opacity-0 group-hover:opacity-100 transition-all duration-300 hover:shadow-xl flex items-center justify-center space-x-2`}>
-                    <span>En savoir plus</span>
-                    <ArrowRight size={18} />
-                  </button>
                 </div>
 
                 {/* Corner accent */}
@@ -132,9 +127,6 @@ export default function ModernParentsSection() {
               <h3 className="text-3xl font-bold text-[#374dc8] mb-6">
                 Ressources pour parents
               </h3>
-              <p className="text-gray-600 text-lg mb-6 leading-relaxed">
-                Téléchargez notre guide complet gratuit pour accompagner vos enfants dans leur usage du numérique : astuces, règles à mettre en place, et outils recommandés.
-              </p>
 
               <div className="space-y-4 mb-8">
                 {[
@@ -151,11 +143,6 @@ export default function ModernParentsSection() {
                   </div>
                 ))}
               </div>
-
-              <button className="bg-gradient-to-r from-[#cd3278] to-[#e505fa] text-white font-bold py-4 px-8 rounded-xl hover:scale-105 transition-transform duration-300 shadow-xl flex items-center space-x-2">
-                <span>Télécharger le guide</span>
-                <ArrowRight size={20} />
-              </button>
             </div>
           </div>
         </div>

@@ -95,7 +95,7 @@ export default function CommunitiesSection() {
         </div>
       </div>
 
-      <style jsx>{`
+      <style>{`
         @keyframes slideInFromLeft {
           from {
             opacity: 0;

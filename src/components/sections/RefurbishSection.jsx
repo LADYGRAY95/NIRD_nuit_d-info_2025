@@ -147,7 +147,7 @@ export default function ModernRefurbishSection() {
 
       </div>
 
-      <style jsx>{`
+      <style>{`
         @keyframes scaleIn {
           from {
             opacity: 0;

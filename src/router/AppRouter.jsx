@@ -11,6 +11,7 @@ import About from '../pages/About';
 
 export default function AppRouter() {
   return (
+      
       <Routes>
         <Route element={<MainLayout />}>
         <Route path="/" element={<Home />} />

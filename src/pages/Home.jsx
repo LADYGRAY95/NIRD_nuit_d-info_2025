@@ -103,16 +103,18 @@ export default function Home() {
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <button className="group relative px-8 py-4 bg-white text-[#cd3278] rounded-2xl font-bold text-lg shadow-2xl hover:shadow-white/50 transition-all duration-300 hover:scale-105 overflow-hidden">
-                  <span className="relative z-10 flex items-center justify-center space-x-2">
+                   <a href='a-propos'><span className="relative z-10 flex items-center justify-center space-x-2">
                     <span>Découvrir NIRD</span>
                     <ArrowRight className="group-hover:translate-x-2 transition-transform" size={20} />
                   </span>
+                  </a>
                   <div className="absolute inset-0 bg-gradient-to-r from-[#f5c20a] to-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </button>
 
-                <button className="px-8 py-4 bg-white/10 backdrop-blur-lg border-2 border-white/40 text-white rounded-2xl font-bold text-lg hover:bg-white/20 hover:border-white/60 transition-all duration-300 hover:scale-105 shadow-lg">
+                <a href="#PilotsSection"><button className="px-8 py-4 bg-white/10 backdrop-blur-lg border-2 border-white/40 text-white rounded-2xl font-bold text-lg hover:bg-white/20 hover:border-white/60 transition-all duration-300 hover:scale-105 shadow-lg">
                   Voir les établissements pilotes
                 </button>
+                </a>
               </div>
 
               {/* Stats mini-cards */}
