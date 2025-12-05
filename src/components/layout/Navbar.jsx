@@ -14,6 +14,7 @@ export default function Navbar() {
     { name: 'Démarche', path: '/demarche' },
     { name: 'Linux', path: '/linux' },
     { name: 'À propos', path: '/a-propos' },
+    { name: 'Frustrating Input', path: '/frustrating-input' },
   ];
 
   return (
