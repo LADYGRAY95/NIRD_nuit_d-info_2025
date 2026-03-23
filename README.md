@@ -6,6 +6,7 @@
 > **NIRD** est une initiative pédagogique et citoyenne qui accompagne les établissements scolaires vers une **transformation responsable de leurs usages numériques** — sans renoncer à la technologie, mais en l’utilisant **mieux, plus longtemps, plus justement**.
 
 🚀 Conçu dans le cadre de la **Nuit de l’Info 2025** — Sujet : *« Le Village Numérique Résistant »*.
+<img width="500" height="2500" alt="image" src="https://github.com/user-attachments/assets/d7c6529a-270c-4d37-8a0c-77c55077af54" />
 
 ---
 
